@@ -1,11 +1,14 @@
 import disnake, config, os
 from disnake.ext import commands
 
+os.system('clear')
+
 bot = commands.Bot(
   command_prefix="!",
   intents=disnake.Intents.all(),
-  sync_commands_dubug=True,
-  sync_permissions=True
+  help_command=None,
+  sync_commands_debug=True,
+  sync_permissions=True,
 )
 
 @bot.event

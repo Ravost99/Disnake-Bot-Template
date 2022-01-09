@@ -22,7 +22,7 @@ class Ctx_Menus(commands.Cog):
           name="Disnake Version",
           value=f"{disnake.__version__}"
         )
-        embed.set_thumbnail(url=self.bot.user.avatar.url)
+        embed.set_thumbnail(url=self.bot.user.display_avatar.url)
         await inter.response.send_message(embed=embed, ephemeral=True)
 
 
