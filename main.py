@@ -9,10 +9,8 @@ bot = commands.Bot(
 
 @bot.event
 async def on_ready():
-  print(
-    f"Im logged in as {bot.user}\n",
-    f"Disnake version: {disnake.__version__}"
-  )
+  print(f"Im logged in as {bot.user}")
+  print(f"Disnake Version: {disnake.__version__}")
 
 @bot.slash_command(name="ping", description="Check if the bot is alive")
 async def ping(inter):
