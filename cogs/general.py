@@ -13,7 +13,7 @@ class General(commands.Cog):
     )
     async def ping(self, inter):
         embed = disnake.Embed(
-          title=":ping-pong: Pong!",
+          title=":ping_pong: Pong!",
           description="I'm alive!",
           color=disnake.Color.green()
         )
