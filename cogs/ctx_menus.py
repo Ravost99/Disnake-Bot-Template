@@ -7,8 +7,8 @@ class Ctx_Menus(commands.Cog):
     def __init__(self, bot):
         self.bot: commands.Bot = bot
 
-    @user_command(name="UserInfo")
-    async def UserInfo(self, inter):
+    @user_command(name="BotInfo")
+    async def BotInfo(self, inter):
         embed = disnake.Embed(
           title=f"Name: {self.bot.user}",
           description=f"ID: {self.bot.user.id}",

@@ -1,0 +1,2 @@
+error = 0xff0000
+success = 0x3f9425
