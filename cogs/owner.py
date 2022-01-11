@@ -9,6 +9,20 @@ class Owner(commands.Cog):
 
     @commands.is_owner()
     @slash_command(
+      name="shutdown",
+      description="Make the bot shutdown"
+    )
+    async def shutdown(self, inter):
+        embed = disnake.Embed(
+          title="Logging out",
+          description=":wave: Goodbye!",
+          color=config.success
+        )
+        await inter.send(embed=embed)
+        await self.bot.logout()
+
+    @commands.is_owner()
+    @slash_command(
       name="echo",
       description="Make the bot echo something"
     )

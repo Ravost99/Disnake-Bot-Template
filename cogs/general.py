@@ -52,7 +52,7 @@ class General(commands.Cog):
           value=f"{disnake.__version__}"
         )
         embed.set_thumbnail(url=self.bot.user.display_avatar.url)
-        await inter.response.send_message(embed=embed)
+        await inter.send(embed=embed)
 
 
     @slash_command(
