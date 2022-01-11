@@ -1,4 +1,5 @@
-import disnake, config, traceback
+import disnake, config, traceback, pytz
+from datetime import datetime
 from disnake.ext import commands
 from disnake.ext.commands import slash_command, user_command, message_command
 
@@ -12,6 +13,32 @@ class Events(commands.Cog):
         self.bot: commands.Bot = bot
 
     @commands.Cog.listener()
+    async def on_command_completion(self, ctx: commands.Context):
+      tz = pytz.timezone('America/Chicago')
+      now = datetime.now(tz)
+      current_time = now.strftime("%I:%M:%S %p")
+      current_date = datetime.today().strftime('%m-%d-%Y')
+
+      command_name = ctx.command
+      embed = disnake.Embed(
+        title=f"Executed '{command_name}'",
+        color=config.success
+      )
+      embed.add_field(
+        name=f"Executed by {ctx.author} (ID: {ctx.author.id})",
+        value=f"in {ctx.guild.name} (ID: {ctx.guild.id})"
+      )
+      embed.set_footer(
+        text=f"On {current_date} at {current_time}"
+      )
+      try:
+        channel = self.bot.get_channel(config.logs_channel)
+        await channel.send(embed=embed)
+      except:
+        print(f"Executed '{command_name}' in {ctx.guild.name} (ID: {ctx.guild.id})\nBy {ctx.author} (ID: {ctx.author.id})\nOn {current_date} at {current_time}")
+
+    #on any command error
+    @commands.Cog.listener()
     async def on_command_error(self, ctx: commands.Context, error: commands.CommandError):
       embed = disnake.Embed(
         title=f"Command `{ctx.command}` raised an error: `{error}`",
@@ -20,6 +47,7 @@ class Events(commands.Cog):
       )
       await ctx.send(embed=embed)
 
+    # slash comamnd error
     @commands.Cog.listener()
     async def on_slash_command_error(self, inter: disnake.AppCmdInter, error: commands.CommandError):
       embed = disnake.Embed(
@@ -33,6 +61,7 @@ class Events(commands.Cog):
         send = inter.response.send_message
       await send(embed=embed)
 
+    # context menu / user error
     @commands.Cog.listener()
     async def on_user_command_error(self, inter: disnake.AppCmdInter, error: commands.CommandError):
       embed = disnake.Embed(
@@ -46,6 +75,7 @@ class Events(commands.Cog):
         send = inter.response.send_message
       await send(embed=embed)
 
+    # Message command error
     @commands.Cog.listener()
     async def on_message_command_error(self, inter: disnake.AppCmdInter, error: commands.CommandError):
       embed = disnake.Embed(
