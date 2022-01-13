@@ -21,7 +21,7 @@ class Events(commands.Cog):
 
       command_name = ctx.command
       embed = disnake.Embed(
-        title=f"Executed '{command_name}'",
+        title=f"Executed command '{command_name}'",
         color=config.success
       )
       embed.add_field(
@@ -35,7 +35,32 @@ class Events(commands.Cog):
         channel = self.bot.get_channel(config.logs_channel)
         await channel.send(embed=embed)
       except:
-        print(f"Executed '{command_name}' in {ctx.guild.name} (ID: {ctx.guild.id})\nBy {ctx.author} (ID: {ctx.author.id})\nOn {current_date} at {current_time}")
+        print(f"Executed command '{command_name}' in {ctx.guild.name} (ID: {ctx.guild.id})\nBy {ctx.author} (ID: {ctx.author.id})\nOn {current_date} at {current_time}")
+
+    @commands.Cog.listener()
+    async def on_slash_command_completion(self, inter: disnake.AppCmdInter):
+      tz = pytz.timezone('America/Chicago')
+      now = datetime.now(tz)
+      current_time = now.strftime("%I:%M:%S %p")
+      current_date = datetime.today().strftime('%m-%d-%Y')
+
+      command_name = inter.data
+      embed = disnake.Embed(
+        title=f"Executed slash command '{command_name}'",
+        color=config.success
+      )
+      embed.add_field(
+        name=f"Executed by {inter.author} (ID: {inter.author.id})",
+        value=f"in {inter.guild.name} (ID: {inter.guild.id})"
+      )
+      embed.set_footer(
+        text=f"On {current_date} at {current_time}"
+      )
+      try:
+        channel = self.bot.get_channel(config.logs_channel)
+        await channel.send(embed=embed)
+      except:
+        print(f"Executed slash command '{command_name}' in {inter.guild.name} (ID: {inter.guild.id})\nBy {inter.author} (ID: {inter.author.id})\nOn {current_date} at {current_time}")
 
     #on any command error
     @commands.Cog.listener()
