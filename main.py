@@ -1,7 +1,8 @@
 #imports and packages==
-import disnake, config, os
+import disnake, config, os, asyncio
 from disnake.ext import commands, tasks
 
+asyncio.sleep(5.9)
 os.system('clear')
 
 #setting up the bot
@@ -40,4 +41,4 @@ if __name__ in '__main__':
       bot.load_extension(f"{py_path}.{name[:-3]}")
 
 #running the bot with the token
-bot.run(os.environ['TOKEN'])
+bot.run(config.token)

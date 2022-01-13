@@ -12,14 +12,17 @@ class Events(commands.Cog):
     def __init__(self, bot):
         self.bot: commands.Bot = bot
 
+    #command check
     @commands.Cog.listener()
-    async def on_command_completion(self, ctx: commands.Context):
+    async def on_command(self, ctx: commands.Context):
       tz = pytz.timezone('America/Chicago')
       now = datetime.now(tz)
       current_time = now.strftime("%I:%M:%S %p")
       current_date = datetime.today().strftime('%m-%d-%Y')
 
-      command_name = ctx.command
+      fullCommandName = ctx.data.name
+      split = fullCommandName.split(" ")
+      command_name = str(split[0])
       embed = disnake.Embed(
         title=f"Executed command '{command_name}'",
         color=config.success
@@ -32,19 +35,24 @@ class Events(commands.Cog):
         text=f"On {current_date} at {current_time}"
       )
       try:
+        print(f"Executed command '{command_name}' in {ctx.guild.name} (ID: {ctx.guild.id})\nBy {ctx.author} (ID: {ctx.author.id})\nOn {current_date} at {current_time}")
+        #logs channel
         channel = self.bot.get_channel(config.logs_channel)
-        await channel.send(embed=embed)
+        await channel.send(embed=embed) 
       except:
         print(f"Executed command '{command_name}' in {ctx.guild.name} (ID: {ctx.guild.id})\nBy {ctx.author} (ID: {ctx.author.id})\nOn {current_date} at {current_time}")
 
+    # slash command check
     @commands.Cog.listener()
-    async def on_slash_command_completion(self, inter: disnake.AppCmdInter):
+    async def on_slash_command(self, inter):
       tz = pytz.timezone('America/Chicago')
       now = datetime.now(tz)
       current_time = now.strftime("%I:%M:%S %p")
       current_date = datetime.today().strftime('%m-%d-%Y')
 
-      command_name = inter.data
+      command_name = inter.data.name
+      split = command_name.split(" ")
+      command_name = str(split[0])
       embed = disnake.Embed(
         title=f"Executed slash command '{command_name}'",
         color=config.success
@@ -57,10 +65,41 @@ class Events(commands.Cog):
         text=f"On {current_date} at {current_time}"
       )
       try:
+        print(f"Executed slash command '{command_name}' in {inter.guild.name} (ID: {inter.guild.id})\nBy {inter.author} (ID: {inter.author.id})\nOn {current_date} at {current_time}")
+        # logs channel
         channel = self.bot.get_channel(config.logs_channel)
         await channel.send(embed=embed)
       except:
         print(f"Executed slash command '{command_name}' in {inter.guild.name} (ID: {inter.guild.id})\nBy {inter.author} (ID: {inter.author.id})\nOn {current_date} at {current_time}")
+
+    @commands.Cog.listener()
+    async def on_user_command(self, inter):
+      tz = pytz.timezone('America/Chicago')
+      now = datetime.now(tz)
+      current_time = now.strftime("%I:%M:%S %p")
+      current_date = datetime.today().strftime('%m-%d-%Y')
+
+      command_name = inter.data.name
+      split = command_name.split(" ")
+      command_name = str(split[0])
+      embed = disnake.Embed(
+        title=f"Executed user command '{command_name}'",
+        color=config.success
+      )
+      embed.add_field(
+        name=f"Executed by {inter.author} (ID: {inter.author.id})",
+        value=f"in {inter.guild.name} (ID: {inter.guild.id})"
+      )
+      embed.set_footer(
+        text=f"On {current_date} at {current_time}"
+      )
+      try:
+        print(f"Executed user command '{command_name}' in {inter.guild.name} (ID: {inter.guild.id})\nBy {inter.author} (ID: {inter.author.id})\nOn {current_date} at {current_time}")
+        # logs channel
+        channel = self.bot.get_channel(config.logs_channel)
+        await channel.send(embed=embed)
+      except:
+        print(f"Executed user command '{command_name}' in {inter.guild.name} (ID: {inter.guild.id})\nBy {inter.author} (ID: {inter.author.id})\nOn {current_date} at {current_time}")
 
     #on any command error
     @commands.Cog.listener()

@@ -23,15 +23,19 @@ class General(commands.Cog):
       name="poll",
       description="Create a poll that users can react to"
     )
-    async def poll(self, inter, emoji_1, emoji_2, emoji_3, title):
+    async def poll(self, inter, emoji_1: disnake.Emoji, emoji_2: disnake.Emoji, emoji_3: disnake.Emoji, title):
         embed = disnake.Embed(
           title=title,
+          description="A new poll has been created!",
           color=disnake.Color.green()
         )
-        message = await inter.send(embed=embed)
-        await message.add_reaction(emoji_1)
-        await message.add_reaction(emoji_2)
-        await message.add_reaction(emoji_3)
+        embed.set_footer(
+          text=f"Poll created by: {inter.author} • React to vote!"
+        )
+        embed_message = await inter.send(embed=embed)
+        await embed_message.add_reaction(emoji_1)
+        await embed_message.add_reaction(emoji_2)
+        await embed_message.add_reaction(emoji_3)
 
     @slash_command(
       name="BotInfo",
