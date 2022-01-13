@@ -14,3 +14,5 @@ warning = 0xb3b300
 status_task = "Hello from Disnake!"
 #your logs channel
 logs_channel = 931205474894880789
+#your keep_alive message when you run the bot
+keep_alive_message = "Bot Online"

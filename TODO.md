@@ -8,5 +8,6 @@
   - Warn
   - Timeout
   - Move
-- [ ] Events
+- [X] Events
   - [Command completion](https://docs.disnake.dev/en/latest/ext/commands/api.html?highlight=completion#disnake.disnake.ext.commands.on_command_completion)
+- [ ] Owner commands

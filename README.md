@@ -20,6 +20,15 @@ A simple discord bot made with disnake
 |token|Your Bot's Token|
 |logs_channel|The id of your logs channel (Optional)|
 |status_task|Your bot's status task (Optional)|
+|keep_alive_message|The message when you run the bot|
 
 ## How to setup [uptimerobot](https://uptimerobot.com) for running on the cloud
 1. Click the link (or [this](https://uptimerobot.com) link)
+2. Then create an account
+3. Click + Add New Monitor
+4. Under monitor type select `HTTP`
+5. Under friendly name Put the name of your bot
+6. Put your bot's url in the `URL` input
+7. Then Click Create Monitor
+
+Done!

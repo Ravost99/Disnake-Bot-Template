@@ -1,5 +1,6 @@
 #imports and packages==
 import disnake, config, os, asyncio
+from keep_alive import keep_alive
 from disnake.ext import commands, tasks
 
 asyncio.sleep(5.9)
