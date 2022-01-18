@@ -12,6 +12,7 @@ A simple discord bot made with disnake
 </p>
 
 ## How to setup your bot
+
 1. Go to `config.py` file
 2. Edit these values with the items in the table below
 
@@ -20,6 +21,7 @@ A simple discord bot made with disnake
 |bot_id|Your Bot's ID|
 |token|Your Bot's Token|
 |logs_channel|The id of your logs channel (Optional)|
+|archive_id|The id of your archive category|
 |status_task|Your bot's status task (Optional)|
 |keep_alive_message|The message when you run the bot|
 

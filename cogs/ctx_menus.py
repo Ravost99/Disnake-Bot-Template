@@ -7,6 +7,7 @@ class Ctx_Menus(commands.Cog):
     def __init__(self, bot):
         self.bot: commands.Bot = bot
 
+    # a simple user / context menu command
     @user_command(name="BotInfo")
     async def BotInfo(self, inter):
         embed = disnake.Embed(

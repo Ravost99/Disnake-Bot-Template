@@ -60,6 +60,21 @@ class Moderation(commands.Cog):
         await channel.set_permissions(inter.guild.default_role, overwrite=overwrite)
         await channel.send(":unlock: Channel Unlocked.")
 
+    @commands.has_permissions(manage_channels=True)
+    @slash_command(
+      name="archive",
+      description="Archive a channel"
+    )
+    async def archive(self, inter, channel: disnake.TextChannel = None, voice_channel: disnake.VoiceChannel = None, stage_channel: disnake.StageChannel = None):
+      channel = channel or voice_channel or stage_channel or inter.channel
+      category = disnake.utils.get(inter.guild.channels, id=config.archive_id)
+      embed = disnake.Embed(
+        title=":white_check_mark: Archived!",
+        color=config.success
+      )
+      await inter.send(embed=embed)
+      await channel.edit(category=category)
+
 
 
 def setup(bot):
