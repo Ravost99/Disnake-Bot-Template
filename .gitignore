@@ -1,3 +1,8 @@
+#custom for not working commands
+#these files will be coming soon!
+reactole.py
+reactrole.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
