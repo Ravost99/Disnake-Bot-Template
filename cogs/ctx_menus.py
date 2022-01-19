@@ -8,23 +8,7 @@ class Ctx_Menus(commands.Cog):
         self.bot: commands.Bot = bot
 
     # a simple user / context menu command
-    @user_command(name="BotInfo")
-    async def BotInfo(self, inter):
-        embed = disnake.Embed(
-          title=f"Name: {self.bot.user}",
-          description=f"ID: {self.bot.user.id}",
-          color=disnake.Color.green()
-        )
-        embed.add_field(
-          name="Owner information",
-          value="Ravost99#3361"
-        )
-        embed.add_field(
-          name="Disnake Version",
-          value=f"{disnake.__version__}"
-        )
-        embed.set_thumbnail(url=self.bot.user.display_avatar.url)
-        await inter.response.send_message(embed=embed, ephemeral=True)
+    
 
 
 def setup(bot):
