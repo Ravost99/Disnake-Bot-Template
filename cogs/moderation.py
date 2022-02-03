@@ -34,6 +34,62 @@ class Moderation(commands.Cog):
           )
           await inter.send(embed=embed)
 
+    @commands.has_permissions(kick_members=True)
+    @slash_command(
+      name="kick",
+      description="Kick a member from a server"
+    )
+    async def kick(self, inter, member: disnake.User, *, reason: str = "Not specified"):
+      await member.kick(reason=reason)
+      embed = disnake.Embed(
+        title=f"{member} was kicked by {inter.author}",
+        description=reason,
+        color=config.success
+      )
+      await inter.send(embed=embed)
+
+    @commands.has_permissions(ban_members=True)
+    @slash_command(
+      name="ban",
+      description="Ban a user from a server and all messages after days"
+    )
+    async def ban(self, inter, member: disnake.Member, delete_msg_days: int, *, reason: str = None):
+      await member.ban(delete_message_days=delete_msg_days, reason=reason)
+      embed = disnake.Embed(
+        title=f"{member} was banned by {inter.author}",
+        description=reason,
+        color=config.success
+      )
+      await inter.send(embed=embed)
+    
+    @commands.has_permissions(administrator=True)
+    @slash_command(
+      name="unban",
+      description="Unban a user, use the user's full name"
+    )
+    async def unban(self, inter, member: str, *, reason: str):
+      await member.unban(reason=reason)
+      embed = disnake.Embed(
+        title=f"{member} was unbanned by {inter.author}",
+        description=reason,
+        color=config.success
+      )
+      await inter.send(embed=embed)
+
+    @commands.has_permissions(manage_channels=True)
+    @slash_command(
+      name="move",
+      description="Move the member to a voice channel"
+    )
+    async def move(self, inter, member: disnake.User, channel: disnake.VoiceChannel = None):
+      await member.edit(voice_channel=channel)
+      embed = disnake.Embed(
+        title="Moved!",
+        description=f"{member} was moved to {channel}",
+        color=config.success
+      )
+      await inter.send(embed=embed)
+
     @commands.has_permissions(manage_channels=True)
     @slash_command(
       name="lock",

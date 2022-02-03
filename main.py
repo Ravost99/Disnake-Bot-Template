@@ -13,7 +13,7 @@ bot = commands.Bot(
   help_command=None,
   sync_commands_debug=True,
   sync_permissions=True,
-  test_guilds=[929753074875125781],
+  test_guilds=[929753074875125781], #put your guild ids here, that the bot is in
 )
 
 #checking when the bot is ready
@@ -25,6 +25,7 @@ async def on_ready():
   print(f"Starting Status Task: {config.status_task}")
   print("-----------------------------")
   status_task.start()
+  keep_alive()
 
 # Setup the game status task of the bot
 # change the minutes to what ever you want, remove if you want

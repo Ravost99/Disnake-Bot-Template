@@ -19,7 +19,7 @@ class Owner(commands.Cog):
           color=config.success
         )
         await inter.send(embed=embed)
-        await self.bot.logout()
+        await self.bot.close()
 
     @commands.is_owner()
     @slash_command(
