@@ -1,6 +1,8 @@
 # Disnake.py-Bot-Template
 A simple discord bot made with disnake
 
+Don't forget to share!
+
 <p align="center">
   <a href="//github.com/Ravost99/Disnake.py-Bot-Template/releases"><img src="https://img.shields.io/github/v/release/Ravost99/Disnake.py-Bot-Template"></a>
   <a href="//github.com/Ravost99/Disnake.py-Bot-Template/commits/main"><img src="https://img.shields.io/github/last-commit/Ravost99/Disnake.py-Bot-Template"></a>
