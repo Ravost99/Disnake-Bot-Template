@@ -1,0 +1,31 @@
+name: Bug Report
+description: Help Me! Something is wrong with the code.
+labels: ["bug"]
+assignees:
+  - Ravost99
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: describe
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is. Also explain how you reproduce the bug.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      description: What are your python and disnake versions? Write your Python version first.
+      placeholder: Python Version, Disnake Version
+    validations:
+      required: true
+  - type: textarea
+    id: image
+    attributes:
+      label: Upload a screenshot
+      description: If applicable, add screenshots to help explain your problem.
