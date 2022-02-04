@@ -2,7 +2,7 @@ import os
 
 #bots id
 bot_id = 928326338190905385
-#token optional .env token
+#token optional .env token 
 token = os.environ['TOKEN']
 
 #embed colors add your own if you like!
