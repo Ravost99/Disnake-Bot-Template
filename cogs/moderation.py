@@ -132,7 +132,6 @@ class Moderation(commands.Cog):
       await channel.edit(category=category)
 
 
-
 def setup(bot):
     bot.add_cog(Moderation(bot))
     print(f"> Extension {__name__} is ready")

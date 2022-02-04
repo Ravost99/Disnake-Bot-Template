@@ -10,7 +10,7 @@ class Template(commands.Cog):
     # a slash command, add a custom name and description
     @slash_command(
       name="testcommand",
-      description=None
+      description=None#add your description here
     )
     async def testcommand(self, inter):
         # remember to remove the 'pass' and add your own stuff here

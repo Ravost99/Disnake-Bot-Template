@@ -7,7 +7,7 @@ class Owner(commands.Cog):
     def __init__(self, bot):
         self.bot: commands.Bot = bot
 
-    @commands.is_owner()
+    @commands.is_owner() #a simple owner check for owner commands
     @slash_command(
       name="shutdown",
       description="Make the bot shutdown"

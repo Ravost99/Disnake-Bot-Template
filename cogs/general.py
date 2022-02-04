@@ -52,6 +52,10 @@ class General(commands.Cog):
           value="Ravost99#3361"
         )
         embed.add_field(
+          name="Used [Ravost99's](https://github.com/Ravost99/Disnake.py-Bot-Template) Template",
+          value="Share the repo!"
+        )
+        embed.add_field(
           name="Disnake Version",
           value=f"{disnake.__version__}"
         )
@@ -60,7 +64,7 @@ class General(commands.Cog):
 
 
     @slash_command(
-      name='serverinfo',
+      name="serverinfo",
       description="Get some info on the current server"
     )
     async def serverinfo(self, inter: disnake.ApplicationCommandInteraction):
@@ -69,7 +73,7 @@ class General(commands.Cog):
         role_length = len(roles)
         if role_length > 50:
             roles = roles[:50]
-            roles.append(f">>>> Displaying[50/{len(roles)}] Roles")
+            roles.append(f">> Displaying[50/{len(roles)}] Roles")
         roles = ", ".join(roles)
         channels = len(server.channels)
         time = str(server.created_at)
