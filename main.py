@@ -1,14 +1,14 @@
-#imports and packages==
+#imports and packages
 import disnake, config, os, asyncio
 from keep_alive import keep_alive
 from disnake.ext import commands, tasks
 
-asyncio.sleep(5.9)
+asyncio.sleep(5.9) #to avoid discord rate limits
 os.system('clear')
 
 #setting up the bot
 bot = commands.Bot(
-  command_prefix="!",
+  command_prefix="!",#prefix, not needed for slash commands
   intents=disnake.Intents.all(),
   help_command=None,
   sync_commands_debug=True,
@@ -39,7 +39,7 @@ if __name__ in '__main__':
   py_path = f"cogs"
   folder = f"cogs"
   for name in os.listdir(folder):
-    if name.endswith(".py") and os.path.isfile(f"cogs/{name}"):
+    if name.endswith(".py") and os.path.isfile(f"cogs/{name}"):#finding all python files
       bot.load_extension(f"{py_path}.{name[:-3]}")
 
 #running the bot with the token
