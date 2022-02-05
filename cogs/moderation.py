@@ -10,7 +10,7 @@ class Moderation(commands.Cog):
     #optional permissions remove if you dont want it
     @commands.has_permissions(manage_nicknames=True)
     @slash_command(
-      name="Nick",
+      name="nick",
       description="Change the nickname of a user"
     )
     async def nick(self, inter, member: disnake.User, *, nickname: str):
