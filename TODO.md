@@ -4,7 +4,7 @@
   - [X] Ban & Unban
   - [X] Nick
   - [ ] Purge & Clear
-  - [ ] Lock & Unlock
+  - [X] Lock & Unlock
   - [ ] Warn
   - [ ] Timeout
   - [X] Move
