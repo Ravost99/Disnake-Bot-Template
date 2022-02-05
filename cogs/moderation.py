@@ -2,6 +2,9 @@ import disnake, config
 from disnake.ext import commands
 from disnake.ext.commands import slash_command, user_command, message_command
 
+#===NOTICE===
+# i would recommend making a role
+# with all permissions for admin to run these commands
 
 class Moderation(commands.Cog):
     def __init__(self, bot):
@@ -80,19 +83,28 @@ class Moderation(commands.Cog):
       )
       await inter.send(embed=embed)
 
-    @commands.has_permissions(manage_channels=True)
+    @commands.has_permissions(administrator=True)
     @slash_command(
       name="move",
       description="Move the member to a voice channel"
     )
     async def move(self, inter, member: disnake.User, channel: disnake.VoiceChannel = None):
-      await member.edit(voice_channel=channel)
-      embed = disnake.Embed(
-        title="Moved!",
-        description=f"{member} was moved to {channel}",
-        color=config.success
-      )
-      await inter.send(embed=embed)
+      if member.voice:
+        await member.edit(voice_channel=channel)
+        embed = disnake.Embed(
+          title="Moved!",
+          description=f"{member} was moved to {channel}",
+          color=config.success
+        )
+        await inter.send(embed=embed)
+      else:
+        embed = disnake.Embed(
+          title="Error!",
+          description=f"{member} is not connected to a voice channel!",
+          color=config.error
+        )
+        await inter.send(embed=embed)
+
 
     @commands.has_permissions(manage_channels=True)
     @slash_command(
