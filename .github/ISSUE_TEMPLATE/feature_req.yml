@@ -1,0 +1,18 @@
+name: Feature Request
+description: Do you want to add a feature to the template?
+#labels: ["enhancement"]
+assignees:
+  - Ravost99
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting your new feature idea.
+  - type: textarea
+    id: add
+    attributes:
+      label: What do you want to add
+      description: Tell us what you want to see in future updates!
+      placeholder: Write Here!
+    validations:
+      required: true
