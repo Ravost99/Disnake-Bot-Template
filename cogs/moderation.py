@@ -54,10 +54,12 @@ class Moderation(commands.Cog):
       description="Ban a user from a server and all messages after days"
     )
     async def ban(self, inter, member: disnake.Member, delete_msg_days: int, *, reason: str = None):
+      if delete_msg_days > 7: #can only delete messages less than 7 days
+        delete_msg_days = 7
       await member.ban(delete_message_days=delete_msg_days, reason=reason)
       embed = disnake.Embed(
         title=f"{member} was banned by {inter.author}",
-        description=reason,
+        description=f"Reason: {reason}",
         color=config.success
       )
       await inter.send(embed=embed)
@@ -65,13 +67,15 @@ class Moderation(commands.Cog):
     @commands.has_permissions(administrator=True)
     @slash_command(
       name="unban",
-      description="Unban a user, use the user's full name"
+      description="Unban a user, use the user's id"
     )
-    async def unban(self, inter, member: str, *, reason: str):
-      await member.unban(reason=reason)
+    async def unban(self, inter, member_id, *, reason: str):
+      member_id = int(member_id)
+      member = await self.bot.fetch_user(member_id)
+      await inter.guild.unban(member, reason=reason)
       embed = disnake.Embed(
         title=f"{member} was unbanned by {inter.author}",
-        description=reason,
+        description=f"Reason: {reason}",
         color=config.success
       )
       await inter.send(embed=embed)
