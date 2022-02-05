@@ -1,13 +1,13 @@
 
 - [ ] Moderations commands
-  - [Kick](https://docs.disnake.dev/en/latest/api.html?highlight=kick#disnake.Member.kick)
-  - Ban
-  - Nick
-  - Purge & Clear
-  - Lock & Unlock
-  - Warn
-  - Timeout
-  - [X] Move
+  - [X] [Kick](https://docs.disnake.dev/en/latest/api.html?highlight=kick#disnake.Member.kick)
+  - [X] Ban & Unban
+  - [X] Nick
+  - [ ] Purge & Clear
+  - [ ] Lock & Unlock
+  - [ ] Warn
+  - [ ] Timeout
+  - [ ] Move
 - [X] Events
   - [Command completion](https://docs.disnake.dev/en/latest/ext/commands/api.html?highlight=completion#disnake.disnake.ext.commands.on_command_completion)
 - [ ] Owner commands
