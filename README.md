@@ -36,4 +36,4 @@ Don't forget to share!
 6. Put your bot's url in the `URL` input
 7. Then Click Create Monitor
 
-Done!
+Done! 
