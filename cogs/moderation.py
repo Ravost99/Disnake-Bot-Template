@@ -113,9 +113,11 @@ class Moderation(commands.Cog):
     )
     async def lock(self, inter, channel: disnake.TextChannel=None):
         channel = channel or inter.channel
+
         overwrite = channel.overwrites_for(inter.guild.default_role)
         overwrite.send_messages = False
         overwrite.add_reactions = False
+
         await channel.set_permissions(inter.guild.default_role, overwrite=overwrite)
         await channel.send(":lock: Channel Locked.")
     
@@ -126,9 +128,11 @@ class Moderation(commands.Cog):
     )
     async def unlock(self, inter, channel: disnake.TextChannel=None):
         channel = channel or inter.channel
+
         overwrite = channel.overwrites_for(inter.guild.default_role)
         overwrite.send_messages = True
         overwrite.add_reactions = True
+
         await channel.set_permissions(inter.guild.default_role, overwrite=overwrite)
         await channel.send(":unlock: Channel Unlocked.")
 
@@ -140,6 +144,7 @@ class Moderation(commands.Cog):
     async def archive(self, inter, channel: disnake.TextChannel = None, voice_channel: disnake.VoiceChannel = None, stage_channel: disnake.StageChannel = None):
       channel = channel or voice_channel or stage_channel or inter.channel
       category = disnake.utils.get(inter.guild.channels, id=config.archive_id)
+      
       embed = disnake.Embed(
         title=":white_check_mark: Archived!",
         color=config.success
