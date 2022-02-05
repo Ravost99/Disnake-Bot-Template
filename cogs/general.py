@@ -67,7 +67,7 @@ class General(commands.Cog):
       name="serverinfo",
       description="Get some info on the current server"
     )
-    async def serverinfo(self, inter: disnake.ApplicationCommandInteraction):
+    async def serverinfo(self, inter):
         server = inter.guild
         roles = [x.name for x in server.roles]
         role_length = len(roles)
