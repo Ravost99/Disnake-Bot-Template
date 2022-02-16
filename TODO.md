@@ -11,3 +11,18 @@
 - [X] Events
   - [Command completion](https://docs.disnake.dev/en/latest/ext/commands/api.html?highlight=completion#disnake.disnake.ext.commands.on_command_completion)
 - [ ] Owner commands
+- [ ] Auto Updates
+
+```py
+import urllib
+
+def update():
+    stuff_to_update = ['main.py', 'config.py']
+    for fl in stuff_to_update:
+        dat = urllib.request.urlopen("https://raw.githubusercontent.com/Ravost99/Disnake.py-Bot-Template/master/" + fl).read()
+        with open(fl, 'wb') as file:
+          file.write(dat)
+    print('\n\t\tUpdated Successfull !!!!')
+    print('\tRun The Script Again...')
+    exit()
+```

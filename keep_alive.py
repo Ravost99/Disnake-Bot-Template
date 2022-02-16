@@ -8,7 +8,6 @@ app = Flask('')
 def home():
   return config.keep_alive_message
 
-
 def run():
   app.run(host='0.0.0.0',port=8080)
 
