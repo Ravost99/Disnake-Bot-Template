@@ -13,6 +13,14 @@
 - [ ] Owner commands
 - [ ] Auto Updates
 
+- [ ] Music
+  - [ ] Play
+  - [ ] Pause
+  - [ ] Stop
+  - [ ] Join / Leave
+  - [ ] YT
+  
+
 ```py
 import urllib
 
