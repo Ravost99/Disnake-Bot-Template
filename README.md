@@ -21,7 +21,12 @@ Don't forget to share!
 git clone https://github.com/Ravost99/Disnake-Bot-Template
 cd Disnake-Bot-Template
 ```
-2. Then run ```python3 main.py```
+2. Install package requirements
+```
+pip install -r requirements.txt
+```
+3. Then run 
+```python3 main.py```
 
 Or<br>
 [![Run on Replit](https://replit.com/badge/github/ravost99/disnake-bot-template)](https://repl.it/github/ravost99/disnake-bot-template)<br>
