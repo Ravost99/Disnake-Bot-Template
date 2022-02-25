@@ -25,8 +25,10 @@ cd Disnake-Bot-Template
 ```
 pip install -r requirements.txt
 ```
-3. Then run 
-```python3 main.py```
+3. Then run main.py
+```
+python3 main.py
+```
 
 Or<br>
 [![Run on Replit](https://replit.com/badge/github/ravost99/disnake-bot-template)](https://repl.it/github/ravost99/disnake-bot-template)<br>
