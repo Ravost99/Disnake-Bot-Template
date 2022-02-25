@@ -16,11 +16,15 @@ Don't forget to share!
 </p>
 
 ## How to install
-1. Clone the repo `
+1. Clone the repo using these steps:
+```git clone https://github.com/Ravost99/Disnake-Bot-Template
+cd Disnake-Bot-Template
+```
+2. Then run ```python3 main.py```
 
 Or<br>
-[![Run on Replit](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/vcodes)<br>
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/vcodes)
+[![Run on Replit](https://replit.com/badge/github/ravost99/disnake-bot-template)](https://repl.it/github/ravost99/disnake-bot-template)<br>
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ravost99/disnake-bot-template)
 
 ## How to setup your bot
 
