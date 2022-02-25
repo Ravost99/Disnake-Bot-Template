@@ -17,7 +17,8 @@ Don't forget to share!
 
 ## How to install
 1. Clone the repo using these steps:
-```git clone https://github.com/Ravost99/Disnake-Bot-Template
+```
+git clone https://github.com/Ravost99/Disnake-Bot-Template
 cd Disnake-Bot-Template
 ```
 2. Then run ```python3 main.py```
