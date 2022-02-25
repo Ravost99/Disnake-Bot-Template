@@ -18,7 +18,7 @@ Don't forget to share!
 ## How to install
 1. Clone the repo `
 
-Or
+Or<br>
 [![Run on Replit](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/vcodes)<br>
 [![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/vcodes)
 
