@@ -15,6 +15,9 @@ Don't forget to share!
   <img src="https://tokei.rs/b1/github/Ravost99/Disnake-Bot-Template?category=code">
 </p>
 
+## How to install
+1. Clone the repo `
+
 ## How to setup your bot
 
 1. Go to `config.py` file
