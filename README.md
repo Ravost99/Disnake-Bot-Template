@@ -6,7 +6,7 @@ Don't forget to share!
 <p align="center">
   <a href="//github.com/Ravost99/Disnake-Bot-Template/releases"><img src="https://img.shields.io/github/v/release/Ravost99/Disnake-Bot-Template"></a>
   <a href="//github.com/Ravost99/Disnake-Bot-Template/commits/main"><img src="https://img.shields.io/github/last-commit/Ravost99/Disnake-Bot-Template"></a>
-  <a href="//github.com/Ravost99/Disnake-Bot-Template/"><img src="https://img.shields.io/github/stars/Ravost99/Disnake-Bot-Template?color=FFFF00"></a>
+  <a href="//github.com/Ravost99/Disnake-Bot-Template/stargazers"><img src="https://img.shields.io/github/stars/Ravost99/Disnake-Bot-Template?color=FFFF00"></a>
   <a href="//github.com/Ravost99/Disnake-Bot-Template/releases"><img src="https://img.shields.io/github/downloads/Ravost99/Disnake-Bot-Template/total"></a>
   <a href="//github.com/Ravost99/Disnake-Bot-Template/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/Ravost99/Disnake-Bot-Template"></a>
   <a href="//github.com/Ravost99/Disnake-Bot-Template"><img src="https://img.shields.io/github/languages/code-size/Ravost99/Disnake-Bot-Template"></a>
