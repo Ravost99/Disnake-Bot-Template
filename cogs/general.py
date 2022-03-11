@@ -1,4 +1,4 @@
-import disnake, config, random
+import disnake, config, random, aiohttp
 from disnake.ext import commands
 from disnake.ext.commands import slash_command, user_command, message_command
 

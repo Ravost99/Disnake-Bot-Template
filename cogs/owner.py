@@ -27,7 +27,8 @@ class Owner(commands.Cog):
       description="Make the bot echo something"
     )
     async def echo(self, inter, *, message):
-        await inter.message.channel.send(message)
+        await inter.response.send_message(f"Sent: `{message}`!", ephemeral=True)
+        await inter.channel.send(message)
 
     @commands.is_owner()
     @slash_command(
