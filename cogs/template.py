@@ -35,19 +35,6 @@ class Template(commands.Cog):
         # remember to remove the 'pass' and add your own stuff here
         pass
 
-
-
-    async def autocomplete_roles(inter, string: str):
-        rolelist = [r.mention for r in inter.author.roles if r != inter.guild.default_role]
-        return [lang for lang in rolelist if string.lower() in lang.lower()]
-    
-    @slash_command()
-    async def autocomplete(
-        inter: disnake.CommandInteraction,
-        language: str = commands.Param(autocomplete=autocomplete_roles),
-    ):
-        await inter.send(language)
-
     @slash_command()
     async def counter(inter):
         """Starts a counter for pressing."""
