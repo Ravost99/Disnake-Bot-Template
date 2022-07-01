@@ -12,7 +12,6 @@ bot = commands.Bot(
   intents=disnake.Intents.all(),
   help_command=None, #in case you want to add your own help command
   sync_commands_debug=True,
-  sync_permissions=True,
   test_guilds=[929753074875125781,970467093394911272], #put your guild ids here, that the bot is in
 )
 
